@@ -1,4 +1,4 @@
-<div class="pokimonCard" (click)="handleClick()">
+<div *ngIf="pokimon" class="pokimonCard" (click)="handleClick()">
     <div>{{pokimon.name}}</div>
     <img  draggable="false" src={{pokimon.img}} alt="" srcset="">
 </div>

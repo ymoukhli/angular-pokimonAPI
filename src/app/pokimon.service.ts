@@ -10,6 +10,8 @@ export class PokimonService {
 
   constructor(private http: HttpClient) { }
 
+  
+  data: any;
   getData(request: string): Observable<any> {
     return this.http.get<any>(request)
   }

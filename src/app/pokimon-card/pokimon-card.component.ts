@@ -21,7 +21,6 @@ export class PokimonCardComponent implements OnInit {
   clicked: EventEmitter<any> = new EventEmitter<any>();
 
   handleClick(): void {
-    console.log('clicked on child')
     this.clicked.emit(this.pokimon);
   }
 }

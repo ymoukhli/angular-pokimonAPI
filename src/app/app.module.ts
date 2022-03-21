@@ -4,15 +4,20 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { PokimonCardComponent } from './pokimon-card/pokimon-card.component';
-
+import { PokimonDetailsComponent } from './pokimon-details/pokimon-details.component';
+import { AppRoutingModule } from './app-routing.module';
+import { PokimonsComponent } from './pokimons/pokimons.component';
 @NgModule({
   declarations: [
     AppComponent,
-    PokimonCardComponent
+    PokimonCardComponent,
+    PokimonDetailsComponent,
+    PokimonsComponent
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
