@@ -17,11 +17,13 @@ export class PokimonDetailsComponent implements OnInit {
 
   pokimonRes: any;
   pokimonImage: string = '';
+  stats: any;
   pokimon: any;
   getPokimon(): void {
     this.pokimonService.getData(`https://pokeapi.co/api/v2/pokemon/${this.pokimon}`)
     .subscribe(result => { 
       this.pokimonImage = result.sprites.other.dream_world.front_default;
+      this.stats = result.stats.map((elem: any) => ({[elem.stat.name]: elem.base_state}))
       this.pokimonRes = result;
     })
 
