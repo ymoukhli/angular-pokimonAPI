@@ -1,0 +1,56 @@
+:host {
+    
+    background: linear-gradient(35deg, #5cbfe0 , #88daf5);
+    border-radius: 0.4em;
+    padding: 1em;
+    position: relative;
+    transition: all ease-in-out 200ms;
+    z-index: 1;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+:host::after {
+    position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(35deg, #88daf5 , #5cbfe0);
+  z-index: 2;
+  opacity: 0; 
+  transition: opacity 0.5s ease-out;
+  border-radius: 0.4em;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+/* :host:nth-child(2n) {
+    background: linear-gradient(35deg, #70DBFF , #70DBFF);
+} */
+.pokimonCard * {
+    z-index: 3;
+}
+.pokimonCard {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+img {
+    width: 150px;
+    height: 200px;
+}
+
+:host:hover::after {
+    transition: all ease-in-out 200ms;
+    opacity: 1;
+}
+:host:hover {
+    transform: scale(1.06);
+
+}
+
+.pokimonCard div {
+    background-color: #e1d4a0;
+    padding: 0.4em 1em;
+    border-radius: 1em;
+    border: 2px solid #184396;
+}
