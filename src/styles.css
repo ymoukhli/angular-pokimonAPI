@@ -1,5 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 
-.selectDisable {
-    pointer-events: none;
+:root {
+    --background: #e1d4a0;
+}
+
+* {
+    box-sizing: border-box;
 }

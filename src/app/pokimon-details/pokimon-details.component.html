@@ -1,2 +1,28 @@
-<app-pokimon-card [pokimon]="{name: pokimon, img: pokimonImage}"></app-pokimon-card>
-<div>{{stats | json}}</div>
+<div class="detail-card">
+    <div class="pokimon-card">
+        <img src={{pokimonImage}}/>
+    </div>
+    <div class="pokimon-description">
+    <div>Description</div>
+    <p>{{stats.description}}</p>
+</div>
+<pokimon-stat [stats]="stats"></pokimon-stat>
+<div class="definition_container">
+    <div>name:
+        <span>{{pokimonRes?.name}}</span>
+    </div>
+    <div>weight: 
+        <span>{{pokimonRes?.weight}}</span>
+    </div>
+    <div>height: <span>{{pokimonRes?.height}}</span></div>
+    
+    <div>types: <span>
+        <span *ngFor="let type of pokimonRes?.types">{{type.type.name}} </span>
+    </span>
+</div>
+</div>
+</div>
+
+<div class="form">
+    
+</div>
