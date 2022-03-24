@@ -1,3 +1,4 @@
+## MAKE SURE YOU RUN 'json-server --watch db.json' in root repo
 # AngularPokimonApi
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.6.
