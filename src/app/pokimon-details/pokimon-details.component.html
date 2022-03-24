@@ -19,10 +19,24 @@
     <div>types: <span>
         <span *ngFor="let type of pokimonRes?.types">{{type.type.name}} </span>
     </span>
-</div>
-</div>
+    </div>
+    </div>
 </div>
 
+<div class="comments">
+    <div *ngFor="let comment of comments">
+        <div>name: {{comment.name}}</div>
+        <div class="comment">{{comment.comment}}</div>
+    </div>
+</div>
 <div class="form">
-    
+    <form [formGroup]="formComment" (ngSubmit)="handleForm()">
+
+        <label for="name">Name: </label>
+        <input id="name" type="text" formControlName="name">
+
+        <label for="comment">Comment: </label>
+        <input id="comment" type="text" formControlName="comment">
+        <button type="submit">submit</button>
+    </form>
 </div>

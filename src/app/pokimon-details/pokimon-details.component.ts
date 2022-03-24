@@ -2,6 +2,7 @@ import { PokimonService } from './../pokimon.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { tap, map } from 'rxjs';
+import { FormControl, FormGroup } from '@angular/forms';
 @Component({
   selector: 'app-pokimon-details',
   templateUrl: './pokimon-details.component.html',
@@ -12,14 +13,34 @@ export class PokimonDetailsComponent implements OnInit {
   constructor(private route: ActivatedRoute, private pokimonService: PokimonService) { }
 
   ngOnInit(): void {
-    this.pokimon = this.route.snapshot.paramMap.get('name')
+    this.pokimon = this.route.snapshot.paramMap.get('name') || ''
     this.getPokimon()
+    this.getComments();
   }
+
+  formComment = new FormGroup({
+    name : new FormControl(''),
+    comment : new FormControl(''),
+  });
 
   pokimonRes: any;
   pokimonImage: string = '';
   stats:any = {};
-  pokimon: any;
+  pokimon: string = '';
+  comments: any;
+
+  getComments() {
+    this.pokimonService.getComments(this.pokimon).subscribe((res: any) => {
+      console.log('com',res);
+      this.comments = res;
+    });
+  }
+  handleForm() {
+    this.formComment.value.pokimon = this.pokimon;
+    this.pokimonService.putData(this.formComment.value).subscribe(res => this.getComments());
+    this.formComment.setValue({ name: '', comment: ''});
+  }
+
   getPokimon(): void {
     this.pokimonService.getData(`https://pokeapi.co/api/v2/pokemon/${this.pokimon}`)
     .subscribe(result => { 

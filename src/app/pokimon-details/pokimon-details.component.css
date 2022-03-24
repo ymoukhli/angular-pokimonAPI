@@ -1,3 +1,9 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4em;
+}
 .detail-card {
     margin: 0 auto;
     display: flex;
@@ -37,4 +43,32 @@
 }
 .detail-card div {
     padding: 0.2em;
+}
+
+
+/*  COMMENTS */
+
+.comments {
+    background-color: var(--background);
+    width: 80vw;
+    max-width: 850px;
+    border: 3px solid black;
+    padding: 1em 2em;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1em;
+}
+
+.comments > div > div:first-child {
+    background-color: #d4c68e;
+    border-top-right-radius: 0.5em;
+    border-top-left-radius: 0.5em;
+    padding: 0.4em 2em;
+
+}
+.comments .comment {
+    border-bottom-left-radius: 0.5em;
+    border-bottom-right-radius: 0.5em;
+    padding: 1em 2em;
+    background-color: #f1e6b6;
 }
